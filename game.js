@@ -9,28 +9,13 @@ function randomNumGenerator() {
     return array;
 }
 
+allColors = ['red', 'orange', 'yellow', 'green', 'lightblue', 'blue', 'purple', 'pink', 'black']
+
 function randomColorGen(number) {
-    switch (number) {
-        case 0:
-            return('var(--red)')
-        case 1:
-            return('var(--orange)')
-        case 2:
-            return('var(--yellow')
-        case 3:
-            return('var(--green)')
-        case 4: 
-            return('var(--lightblue)')
-        case 5:
-            return('var(--blue)')
-        case 6:
-            return('var(--purple)')
-        case 7:
-            return('var(--pink')
-        case 8:
-            return('var(--black)')
-    }
+    let color = allColors[number]
+    return `var(--${color})`
 }
+
 
 pickedColors = [];
 randomNumGenerator().forEach(element => pickedColors.push(randomColorGen(element)))
@@ -58,5 +43,3 @@ inputDots = Array.from(document.getElementsByClassName('input'))
 for (let i in inputDots){
     inputDots[i].style.backgroundColor = randomColorGen(parseInt(i));
 }
-
-// inputDots.forEach(element => element.addEventListener('click',)) FALTA FUNCION
