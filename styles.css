@@ -3,16 +3,18 @@
     --orange: rgb(224, 115, 13);
     --yellow: rgb(220, 240, 44);
     --green: rgb(114, 223, 25);
-    --blue: rgb(32, 163, 238);
-    --pink: rgb(245, 75, 126);
+    --lightblue: rgb(35, 222, 255);
+    --blue: rgb(0, 95, 150);
     --purple: rgb(179, 53, 184);
+    --pink: rgb(245, 75, 126);
+    --black: rgb(0, 0, 0);
 }
 
 
 .container {
     background-color: silver;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .playground {
@@ -24,6 +26,10 @@
     margin: 5px;
     max-width: 200px;
 
+}
+
+.codeInput {
+    flex-direction: column;
 }
 
 .dot {

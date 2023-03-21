@@ -1,7 +1,7 @@
 function randomNumGenerator() {
     let array = []
     while(array.length < 4) {
-        let number = Math.floor((Math.random() * 7));
+        let number = Math.floor((Math.random() * 9));
         if (!array.includes(number)){
             array.push(number)
         }
@@ -20,11 +20,15 @@ function randomColorGen(number) {
         case 3:
             return('var(--green)')
         case 4: 
-            return('var(--blue)')
+            return('var(--lightblue)')
         case 5:
-            return('var(--pink)')
+            return('var(--blue)')
         case 6:
             return('var(--purple)')
+        case 7:
+            return('var(--pink')
+        case 8:
+            return('var(--black)')
     }
 }
 
@@ -42,6 +46,8 @@ for(let i in dotArray){
     dotArray[i].style.backgroundColor = pickedColors[i];
 }
 
-function clickFunction(){
-    Array.from(document.getElementsByClassName('dot')).forEach(element => element.classList.remove('hidden'));
-}
+var dots = Array.from(document.getElementsByClassName('dot hidden'))
+
+function showDots(){
+        dots.forEach(element => element.classList.toggle('hidden'));
+    }
