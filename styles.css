@@ -1,0 +1,43 @@
+:root {
+    --red: rgb(214, 16, 16);
+    --orange: rgb(224, 115, 13);
+    --yellow: rgb(220, 240, 44);
+    --green: rgb(114, 223, 25);
+    --blue: rgb(32, 163, 238);
+    --pink: rgb(245, 75, 126);
+    --purple: rgb(179, 53, 184);
+}
+
+
+.container {
+    background-color: silver;
+    display: flex;
+    flex-direction: column;
+}
+
+.playground {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-evenly;
+    background-color: rgb(119, 118, 118);
+    margin: 5px;
+    max-width: 200px;
+
+}
+
+.dot {
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    z-index: -1;
+}
