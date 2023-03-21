@@ -51,3 +51,12 @@ var dots = Array.from(document.getElementsByClassName('dot hidden'))
 function showDots(){
         dots.forEach(element => element.classList.toggle('hidden'));
     }
+
+
+inputDots = Array.from(document.getElementsByClassName('input'))
+
+for (let i in inputDots){
+    inputDots[i].style.backgroundColor = randomColorGen(parseInt(i));
+}
+
+// inputDots.forEach(element => element.addEventListener('click',)) FALTA FUNCION
