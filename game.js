@@ -65,7 +65,7 @@ inputDots.forEach(element => element.addEventListener('click', colorSelect))
 
 function clearColors() {
     selectedColors.forEach(element => element.style.backgroundColor = 'white')
-    selectedColors.forEach(element => element.style.border = '1.5px solid black')
+    selectedColors.forEach(element => element.style.outline = 'none')
     count = 0;
     codeTry = []
 }
@@ -81,12 +81,12 @@ function createDiv() {
 function validate() {
     for (let i in codeTry) {
         if (codeTry[i] == pickedColors[i]) {
-            selectedColors[i].style.border = '3px solid green'
+            selectedColors[i].style.outline = '3px solid green'
         } else {
             if (pickedColors.includes(String(codeTry[i]))) {
-                selectedColors[i].style.border = '3px solid yellow'
+                selectedColors[i].style.outline = '3px solid yellow'
             } else {
-                selectedColors[i].style.border = '3px solid red'
+                selectedColors[i].style.outline = '3px solid red'
             }
         }
     }
