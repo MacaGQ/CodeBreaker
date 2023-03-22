@@ -38,7 +38,7 @@ for (let i in dotArray) {
 var dots = Array.from(document.getElementsByClassName('dot hidden'))
 
 function showDots() {
-    dots.forEach(element => element.classList.toggle('hidden'));
+    dots.forEach(element => element.classList.remove('hidden'));
 }
 
 
@@ -95,7 +95,8 @@ function validate() {
 function play() {
     if (codeTry.length == 4) {
         if (String(pickedColors) == String(codeTry)) {
-            console.log('You Win!')
+            showDots()
+            alert('You Win!')
         } else {
             validate()
             createDiv()
