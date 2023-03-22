@@ -54,7 +54,7 @@ var count = 0
 var codeTry = []
 
 function colorSelect() {
-    if (count < 4) {
+    if (count < 4 && !codeTry.includes(this.id)) {
         selectedColors[count].style.backgroundColor = `var(--${this.id})`
         codeTry.push(this.id)
         count++
@@ -65,6 +65,7 @@ inputDots.forEach(element => element.addEventListener('click', colorSelect))
 
 function clearColors() {
     selectedColors.forEach(element => element.style.backgroundColor = 'white')
+    selectedColors.forEach(element => element.style.border = '1.5px solid black')
     count = 0;
     codeTry = []
 }
@@ -84,6 +85,8 @@ function validate() {
         } else {
             if (pickedColors.includes(String(codeTry[i]))) {
                 selectedColors[i].style.border = '3px solid yellow'
+            } else {
+                selectedColors[i].style.border = '3px solid red'
             }
         }
     }
@@ -94,9 +97,9 @@ function play() {
         if (String(pickedColors) == String(codeTry)) {
             console.log('You Win!')
         } else {
-            // createDiv()
-            // clearColors()
             validate()
+            createDiv()
+            clearColors()
         }
     } else {
         alert('Pick More Colors')
