@@ -95,8 +95,9 @@ function validate() {
 function play() {
     if (codeTry.length == 4) {
         if (String(pickedColors) == String(codeTry)) {
+            validate()
             showDots()
-            alert('You Win!')
+            // alert('You Win!')
         } else {
             validate()
             createDiv()
