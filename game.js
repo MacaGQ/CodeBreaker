@@ -11,14 +11,18 @@ function randomNumGenerator() {
 
 allColors = ['red', 'orange', 'yellow', 'green', 'lightblue', 'blue', 'purple', 'pink', 'black']
 
-function randomColorGen(number) {
-    let color = allColors[number]
+var pickedColors = []
+function colorPicker() {
+    randomNumGenerator().forEach(element => 
+        pickedColors.push(allColors[element]))
+}
+
+function colorVariables(color) {
     return `var(--${color})`
 }
 
-
-pickedColors = [];
-randomNumGenerator().forEach(element => pickedColors.push(randomColorGen(element)))
+colorPicker()
+console.log(pickedColors)
 
 const firstDot = document.getElementById('first-dot');
 const secondDot = document.getElementById('second-dot');
@@ -28,7 +32,7 @@ const fourthDot = document.getElementById('fourth-dot');
 dotArray = [firstDot, secondDot, thirdDot, fourthDot];
 
 for (let i in dotArray) {
-    dotArray[i].style.backgroundColor = pickedColors[i];
+    dotArray[i].style.backgroundColor = colorVariables(pickedColors[i]);
 }
 
 var dots = Array.from(document.getElementsByClassName('dot hidden'))
@@ -41,7 +45,7 @@ function showDots() {
 inputDots = Array.from(document.getElementsByClassName('input'))
 
 for (let i in inputDots) {
-    inputDots[i].style.backgroundColor = randomColorGen(parseInt(i));
+    inputDots[i].style.backgroundColor = colorVariables(inputDots[i].id);
 }
 
 selectedColors = Array.from(document.getElementsByClassName('selected'))
@@ -74,7 +78,10 @@ function createDiv() {
 }
 
 function play(){
-    console.log(codeTry)
-    createDiv()
-    clearColors()
+    if (String(pickedColors) == String(codeTry)) {
+        console.log('You Win!')
+    } else {
+        createDiv()
+        clearColors()
+    }
 }
