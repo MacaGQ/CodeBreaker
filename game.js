@@ -77,13 +77,26 @@ function createDiv() {
     const newNode = document.getElementById('game').insertBefore(newDiv, document.getElementById('currentSelection'))
 }
 
+function validate() {
+    for (let i in codeTry) {
+        if (codeTry[i] == pickedColors[i]) {
+            selectedColors[i].style.border = '3px solid green'
+        } else {
+            if (pickedColors.includes(String(codeTry[i]))) {
+                selectedColors[i].style.border = '3px solid yellow'
+            }
+        }
+    }
+}
+
 function play() {
     if (codeTry.length == 4) {
         if (String(pickedColors) == String(codeTry)) {
             console.log('You Win!')
         } else {
-            createDiv()
-            clearColors()
+            // createDiv()
+            // clearColors()
+            validate()
         }
     } else {
         alert('Pick More Colors')
