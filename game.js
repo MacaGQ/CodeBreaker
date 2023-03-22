@@ -13,7 +13,7 @@ allColors = ['red', 'orange', 'yellow', 'green', 'lightblue', 'blue', 'purple', 
 
 var pickedColors = []
 function colorPicker() {
-    randomNumGenerator().forEach(element => 
+    randomNumGenerator().forEach(element =>
         pickedColors.push(allColors[element]))
 }
 
@@ -63,7 +63,7 @@ function colorSelect() {
 
 inputDots.forEach(element => element.addEventListener('click', colorSelect))
 
-function clearColors(){
+function clearColors() {
     selectedColors.forEach(element => element.style.backgroundColor = 'white')
     count = 0;
     codeTry = []
@@ -77,11 +77,15 @@ function createDiv() {
     const newNode = document.getElementById('game').insertBefore(newDiv, document.getElementById('currentSelection'))
 }
 
-function play(){
-    if (String(pickedColors) == String(codeTry)) {
-        console.log('You Win!')
+function play() {
+    if (codeTry.length == 4) {
+        if (String(pickedColors) == String(codeTry)) {
+            console.log('You Win!')
+        } else {
+            createDiv()
+            clearColors()
+        }
     } else {
-        createDiv()
-        clearColors()
+        alert('Pick More Colors')
     }
 }
