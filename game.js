@@ -75,7 +75,7 @@ function createDiv() {
     const newDiv = oldDiv.cloneNode(true)
     newDiv.classList.add('playground')
     newDiv.id = '';
-    const newNode = document.getElementById('game').insertBefore(newDiv, document.getElementById('currentSelection'))
+    const newNode = document.getElementById('game').insertBefore(newDiv, oldDiv)
 }
 
 function validate() {
