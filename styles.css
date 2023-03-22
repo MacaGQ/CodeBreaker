@@ -42,7 +42,7 @@
     margin: 5px;
     max-width: 210px;
     min-width: 190px;
-
+    box-shadow: 2px 2px 1px black ;
 }
 
 .codeInput {
