@@ -97,7 +97,9 @@ function play() {
         if (String(pickedColors) == String(codeTry)) {
             validate()
             showDots()
-            document.getElementById('clearButton').style.display = 'none';
+            document.getElementById('clearButton').classList.toggle('invisible');
+            document.getElementById('goButton').classList.toggle('invisible');
+            document.getElementById('playAgain').classList.toggle('invisible')
             // alert('You Win!')
         } else {
             validate()
