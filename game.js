@@ -43,3 +43,16 @@ inputDots = Array.from(document.getElementsByClassName('input'))
 for (let i in inputDots){
     inputDots[i].style.backgroundColor = randomColorGen(parseInt(i));
 }
+
+selectedColors = Array.from(document.getElementsByClassName('selected'))
+
+var count = 0
+
+function colorSelect() {
+    if (count<4){
+        selectedColors[count].style.backgroundColor = `var(--${this.id})`
+    count ++
+    }
+}
+
+inputDots.forEach(element => element.addEventListener('click', colorSelect))
