@@ -12,20 +12,22 @@
 
 <body>
     <div class="container">
-        <div class="game">
+        <div class="game" id="game">
             <div class="playground">
                 <div class="dot hidden" id="first-dot"> </div>
                 <div class="dot hidden" id="second-dot"> </div>
                 <div class="dot hidden" id="third-dot"> </div>
                 <div class="dot hidden" id="fourth-dot"> </div>
             </div>
-            <div class="playground">
+            <div class="playground" id='currentSelection'>
                 <div class="dot selected" id="first-dot-user"> </div>
                 <div class="dot selected" id="second-dot-user"> </div>
                 <div class="dot selected" id="third-dot-user"> </div>
                 <div class="dot selected" id="fourth-dot-user"> </div>
             </div>
-            <button onclick="showDots()">Show</button>
+            <button onclick="showDots()" id="first-button">Show</button>
+            <button onclick="clearColors()">Clear</button>
+            <button onclick="play()">Play</button>
         </div>
         <div class="colorSelection">
             <div class="codeInput playground">
