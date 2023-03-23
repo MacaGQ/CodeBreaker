@@ -31,9 +31,7 @@ const fourthDot = document.getElementById('fourth-dot');
 
 dotArray = [firstDot, secondDot, thirdDot, fourthDot];
 
-for (let i in dotArray) {
-    dotArray[i].style.backgroundColor = colorVariables(pickedColors[i]);
-}
+dotArray.forEach((element, index) => element.style.backgroundColor = colorVariables(pickedColors[index]))
 
 var dots = Array.from(document.querySelectorAll('.playground>.hidden'))
 
@@ -44,9 +42,7 @@ function showDots() {
 
 inputDots = Array.from(document.getElementsByClassName('input'))
 
-for (let i in inputDots) {
-    inputDots[i].style.backgroundColor = colorVariables(inputDots[i].id);
-}
+inputDots.forEach((element) => element.style.backgroundColor = colorVariables(element.id))
 
 selectedColors = Array.from(document.getElementsByClassName('selected'))
 
@@ -79,17 +75,17 @@ function createDiv() {
 }
 
 function validate() {
-    for (let i in codeTry) {
-        if (codeTry[i] == pickedColors[i]) {
-            selectedColors[i].style.outline = '3px solid green'
+    codeTry.forEach((element, index) => {
+        if (element == pickedColors[index]) {
+            selectedColors[index].style.outline = '3px solid green'
         } else {
-            if (pickedColors.includes(String(codeTry[i]))) {
-                selectedColors[i].style.outline = '3px solid yellow'
+            if (pickedColors.includes(String(element))) {
+                selectedColors[index].style.outline = '3px solid yellow'
             } else {
-                selectedColors[i].style.outline = '3px solid red'
+                selectedColors[index].style.outline = '3px solid red'
             }
         }
-    }
+    })
 }
 
 function play() {
