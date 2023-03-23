@@ -15,7 +15,18 @@
 
 <body>
     <header>
-        <h1>CODE BREAKER</h1>
+        <div class="dot">C</div>
+        <div class="dot">O</div>
+        <div class="dot">D</div>
+        <div class="dot">E</div>
+        <div class="dot hidden"> </div>
+        <div class="dot">B</div>
+        <div class="dot">R</div>
+        <div class="dot">E</div>
+        <div class="dot">A</div>
+        <div class="dot">K</div>
+        <div class="dot">E</div>
+        <div class="dot">R</div>
     </header>
     <div class="container">
         <div class="game" id="game">
@@ -34,7 +45,8 @@
             <div class="buttons">
                 <button onclick="clearColors()" id="clearButton">Clear</button>
                 <button onclick="play()" id="goButton">Go!</button>
-                <button onclick="location.reload()" class="invisible" id="playAgain">Play Again!</button>
+                <div class ="invisible" id="youWin"><h3>You Win!</h3></div>
+                <button onclick="location.reload()" class="invisible" id="playAgain">Play Again?</button>
             </div>
         </div>
         <div class="colorSelection">
@@ -49,6 +61,12 @@
                 <div class="dot input" id="pink"> </div>
                 <div class="dot input" id="black"> </div>
             </div>
+        </div>
+        <div id="rules">
+            <h2>Instrucciones</h2>
+            <p>El objectivo del juego es adivinar la serie de colores oculta en la primer linea.</p>
+            <p>Para esto, al arriesgar el programa le indicara mediante diferentes colores si las opciones elegidas son correctas:</p>
+
         </div>
     </div>
     <script src="game.js"></script>

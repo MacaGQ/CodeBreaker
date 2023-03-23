@@ -35,7 +35,7 @@ for (let i in dotArray) {
     dotArray[i].style.backgroundColor = colorVariables(pickedColors[i]);
 }
 
-var dots = Array.from(document.getElementsByClassName('dot hidden'))
+var dots = Array.from(document.querySelectorAll('.playground>.hidden'))
 
 function showDots() {
     dots.forEach(element => element.classList.remove('hidden'));
@@ -99,8 +99,8 @@ function play() {
             showDots()
             document.getElementById('clearButton').classList.toggle('invisible');
             document.getElementById('goButton').classList.toggle('invisible');
-            document.getElementById('playAgain').classList.toggle('invisible')
-            // alert('You Win!')
+            document.getElementById('playAgain').classList.toggle('invisible');
+            document.getElementById('youWin').classList.toggle('invisible');
         } else {
             validate()
             createDiv()
