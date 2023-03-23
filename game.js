@@ -106,7 +106,7 @@ function play() {
         alert('Pick More Colors')
     }
 }
-errorColors = ['red', 'yellow', 'green', 'red']
+errorColors = ['red', 'yellow', 'green']
 demoDots = Array.from(document.getElementsByClassName('demoDot'))
 demoDots.forEach((element, index)=> element.style.backgroundColor = colorVariables(allColors[index+4]))
-demoDots.forEach((element, index) => element.style.outline = `2px solid ${errorColors[index]}`)
+demoDots.forEach((element, index) => element.style.outline = `2px solid ${errorColors[index % errorColors.length]}`)
