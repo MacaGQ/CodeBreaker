@@ -45,7 +45,9 @@
             <div class="buttons">
                 <button onclick="clearColors()" id="clearButton">Clear</button>
                 <button onclick="play()" id="goButton">Go!</button>
-                <div class ="invisible" id="youWin"><h3>You Win!</h3></div>
+                <div class="invisible" id="youWin">
+                    <h3>You Win!</h3>
+                </div>
                 <button onclick="location.reload()" class="invisible" id="playAgain">Play Again?</button>
             </div>
         </div>
@@ -65,11 +67,21 @@
         <div id="rules">
             <h2>Instrucciones</h2>
             <p>El objectivo del juego es adivinar la serie de colores oculta en la primer linea.</p>
-            <p>Para esto, al arriesgar el programa le indicara mediante diferentes colores si las opciones elegidas son correctas:</p>
-
+            <p>Para esto, al arriesgar el programa le indicara mediante diferentes colores si las opciones elegidas son
+                correctas:</p>
+            <div class="playground demo">
+                <div class="dot demoDot"> </div>
+                <div class="dot demoDot"> </div>
+                <div class="dot demoDot"> </div>
+                <div class="dot demoDot"> </div>
+            </div>
+            <ul>
+                <li>Si el circulo esta rodeado en ROJO significa que el color elegido es incorrecto, es decir, NO forma parte de la serie.</li>
+                <li>Si el circulo esta rodeado en AMARILLO significa que el color elegido es correcto pero se encuentra en una posicion incorrecta</li>
+                <li>Si el circulo esta rodeado en VERDE tanto el color como la posicion son correctas.</li>
+            </ul>
         </div>
-    </div>
-    <script src="game.js"></script>
+        <script src="game.js"></script>
 </body>
 
 </html>
