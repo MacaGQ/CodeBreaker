@@ -88,15 +88,18 @@ function validate() {
     })
 }
 
+function toggleVisibility(element){
+    document.getElementById(element).classList.toggle('invisible')
+}
+
+buttonList = ['clearButton', 'goButton', 'playAgain', 'youWin']
+
 function play() {
     if (codeTry.length == 4) {
         if (String(pickedColors) == String(codeTry)) {
             validate()
             showDots()
-            document.getElementById('clearButton').classList.toggle('invisible');
-            document.getElementById('goButton').classList.toggle('invisible');
-            document.getElementById('playAgain').classList.toggle('invisible');
-            document.getElementById('youWin').classList.toggle('invisible');
+            buttonList.forEach(element => toggleVisibility(element))
         } else {
             validate()
             createDiv()
